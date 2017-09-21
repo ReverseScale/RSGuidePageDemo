@@ -31,27 +31,27 @@ Swift 实现的引导页封装，支持多张图片和视频引导页
 ### AppDelegate 中实现方法
 ```
 /// 版本号判断 + 引导页
-    func setupGuideViewJudge() {
-        // 得到当前应用的版本号
-        let infoDictionary = Bundle.main.infoDictionary
-        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
-        // 取出之前保存的版本号
-        let userDefaults = UserDefaults.standard
-        let appVersion = userDefaults.string(forKey: "appVersion")
-        
-        let videoPath = Bundle.main.path(forResource: "videoGuide", ofType: "mp4")
-        let naviVc = UINavigationController.init(rootViewController: ViewController())
-        
-        // 如果 appVersion 为 nil 说明是第一次启动；如果 appVersion 不等于 currentAppVersion 说明是更新了
-        if appVersion == nil || appVersion != currentAppVersion {
-            // 保存最新的版本号
-            userDefaults.setValue(currentAppVersion, forKey: "appVersion")
-            let guideVc = GuideController.init(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:naviVc)
-            self.window?.rootViewController = guideVc
-        } else {
-            self.window?.rootViewController = naviVc
-        }
+func setupGuideViewJudge() {
+    // 得到当前应用的版本号
+    let infoDictionary = Bundle.main.infoDictionary
+    let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+    // 取出之前保存的版本号
+    let userDefaults = UserDefaults.standard
+    let appVersion = userDefaults.string(forKey: "appVersion")
+    
+    let videoPath = Bundle.main.path(forResource: "videoGuide", ofType: "mp4")
+    let naviVc = UINavigationController.init(rootViewController: ViewController())
+    
+    // 如果 appVersion 为 nil 说明是第一次启动；如果 appVersion 不等于 currentAppVersion 说明是更新了
+    if appVersion == nil || appVersion != currentAppVersion {
+        // 保存最新的版本号
+        userDefaults.setValue(currentAppVersion, forKey: "appVersion")
+        let guideVc = GuideController.init(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:naviVc)
+        self.window?.rootViewController = guideVc
+    } else {
+        self.window?.rootViewController = naviVc
     }
+}
 ```
 
 
