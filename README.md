@@ -7,34 +7,20 @@ Swift 实现的引导页封装，支持多张图片和视频引导页
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
 
-使用
+使用 Swift 封装的引导页功能，支持图片集和视频播放形势引导页。
 
-| 名称 |1.列表页 |2.展示页 |3.结果页 |
+| 名称 |1.图片集 |2.视频引导 |3.引导结束 |
 | ------------- | ------------- | ------------- | ------------- |
-| 截图 | ![](http://og1yl0w9z.bkt.clouddn.com/17-7-6/49394070.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-7-6/43197086.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-7-6/14637275.jpg) |
-| 描述 | 通过 storyboard 搭建基本框架 | 字典排列前 | 字典排列后 |
+| 截图 | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/65773363.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/26998421.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/38166068.jpg) |
+| 描述 | 加载图片数组展示引导页 | 加载一个 MP4 视频展示 | 引导结束后进入页面 |
 
 
 ## Advantage 框架的优势
 * 1.文件少，代码简洁
 * 2.不依赖任何其他第三方库
-* 3.同时支持本地图片/Gif及网络图片/Gif
-* 4.自带图片下载与缓存
-* 5.具备较高自定义性
+* 3.同时支持本地图片图片集和本地视频
+* 4.具备较高自定义性
 
-## Installation 安装
-### 1.手动安装:
-`下载Demo后,将功能文件夹拖入到项目中, 导入头文件后开始使用。`
-### 2.CocoaPods安装:
-修改“Podfile”文件
-```
-pod 'AutoAlignButtonTools',:git => 'https://github.com/ReverseScale/AutoAlignButtonToolsCocoapodsDemo.git'
-```
-控制台执行 Pods 安装命令 （ 简化安装：pod install --no-repo-update ）
-```
-pod install
-```
-> 如果 pod search 发现不是最新版本，在终端执行pod setup命令更新本地spec镜像缓存，重新搜索就OK了
 
 ## Requirements 要求
 * iOS 7+
@@ -42,14 +28,32 @@ pod install
 
 
 ## Usage 使用方法
-### 第一步 引入头文件
+### AppDelegate 中实现方法
 ```
-#import "OrderDic.h"
+/// 版本号判断 + 引导页
+    func setupGuideViewJudge() {
+        // 得到当前应用的版本号
+        let infoDictionary = Bundle.main.infoDictionary
+        let currentAppVersion = infoDictionary!["CFBundleShortVersionString"] as! String
+        // 取出之前保存的版本号
+        let userDefaults = UserDefaults.standard
+        let appVersion = userDefaults.string(forKey: "appVersion")
+        
+        let videoPath = Bundle.main.path(forResource: "videoGuide", ofType: "mp4")
+        let naviVc = UINavigationController.init(rootViewController: ViewController())
+        
+        // 如果 appVersion 为 nil 说明是第一次启动；如果 appVersion 不等于 currentAppVersion 说明是更新了
+        if appVersion == nil || appVersion != currentAppVersion {
+            // 保存最新的版本号
+            userDefaults.setValue(currentAppVersion, forKey: "appVersion")
+            let guideVc = GuideController.init(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:naviVc)
+            self.window?.rootViewController = guideVc
+        } else {
+            self.window?.rootViewController = naviVc
+        }
+    }
 ```
-### 第二步 简单调用
-```
-[OrderDic order:dic]
-```
+
 
 使用简单、效率高效、进程安全~~~如果你有更好的建议,希望不吝赐教!
 
