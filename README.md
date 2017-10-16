@@ -11,7 +11,7 @@ Swift 实现的引导页封装，支持多张图片和视频引导页
 
 | 名称 |1.图片集 |2.视频引导 |3.引导结束 |
 | ------------- | ------------- | ------------- | ------------- |
-| 截图 | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/65773363.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/26998421.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/38166068.jpg) |
+| 截图 | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/26998421.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/65773363.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/17-9-21/38166068.jpg) |
 | 描述 | 加载图片数组展示引导页 | 加载一个 MP4 视频展示 | 引导结束后进入页面 |
 
 
