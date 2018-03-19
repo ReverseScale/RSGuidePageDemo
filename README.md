@@ -1,5 +1,4 @@
 # RSGuideDemo
-Swift implementation of the guide page package, support for multiple pictures and video guide page
 
 ![](https://img.shields.io/badge/platform-iOS-red.svg) 
 ![](https://img.shields.io/badge/language-Swift-orange.svg) 
