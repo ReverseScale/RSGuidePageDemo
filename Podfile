@@ -5,7 +5,7 @@ target 'RSGuideDemo' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-  pod 'RSGuidePageLib', '~> 0.2.0’
+  pod 'RSGuidePageLib', '~> 0.6.0’
 
   # Pods for RSGuideDemo
 

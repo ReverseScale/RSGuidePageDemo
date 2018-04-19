@@ -55,12 +55,12 @@ extension AppDelegate {
         let nav = UINavigationController.init(rootViewController: ViewController())
         
         // 多张图片引导页
-//        let guideVc = GuideController()
-//        guideVc.createGuidePage(guide: .picture, pictures: ["guide_1","guide_2","guide_3"], videoPath: nil,pushViewController:nav)
+        let guideVc = GuideController()
+        guideVc.createGuidePage(guide: .picture, pictures: ["guide_1","guide_2","guide_3"], videoPath: nil,pushViewController:nav)
 
         // 视频引导页
-        let guideVc = GuideController()
-        guideVc.createGuidePage(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:nav)
+//        let guideVc = GuideController()
+//        guideVc.createGuidePage(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:nav)
         
         self.window?.rootViewController = guideVc
     }
