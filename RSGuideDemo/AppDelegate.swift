@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RSGuidePageLib
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -54,10 +55,12 @@ extension AppDelegate {
         let nav = UINavigationController.init(rootViewController: ViewController())
         
         // 多张图片引导页
-        let guideVc = GuideController.init(guide: .picture, pictures: ["guide_1","guide_2","guide_3"], videoPath: nil,pushViewController:nav)
+//        let guideVc = GuideController()
+//        guideVc.createGuidePage(guide: .picture, pictures: ["guide_1","guide_2","guide_3"], videoPath: nil,pushViewController:nav)
 
         // 视频引导页
-//        let guideVc = GuideController.init(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:nav)
+        let guideVc = GuideController()
+        guideVc.createGuidePage(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:nav)
         
         self.window?.rootViewController = guideVc
     }
@@ -78,7 +81,8 @@ extension AppDelegate {
         if appVersion == nil || appVersion != currentAppVersion {
             // 保存最新的版本号
             userDefaults.setValue(currentAppVersion, forKey: "appVersion")
-            let guideVc = GuideController.init(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:naviVc)
+            let guideVc = GuideController()
+            guideVc.createGuidePage(guide: .video, pictures: nil, videoPath: videoPath,pushViewController:naviVc)
             self.window?.rootViewController = guideVc
         } else {
             self.window?.rootViewController = naviVc
