@@ -6,6 +6,8 @@
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
 ![](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg) 
 
+[EN](https://github.com/ReverseScale/RSGuidePageDemo) | [中文](https://github.com/ReverseScale/RSGuidePageDemo/blob/master/README_zh.md)
+
 Use the Swift wrapper guide page feature to support the gallery and video playback situation guide page.
 
 ## 🎨 Why test the UI?
