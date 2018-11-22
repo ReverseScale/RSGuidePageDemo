@@ -13,7 +13,7 @@
 ## 🎨 测试 UI 什么样子？
 |1.图片集 |2.视频引导 |3.引导结束 |
 | ------------- | ------------- | ------------- |
-| ![](http://og1yl0w9z.bkt.clouddn.com/18-3-19/8674435.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/18-3-19/75290683.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/18-3-19/67729200.jpg) |
+| ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-22/38048448.jpg) | ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-22/67886214.jpg) | ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-22/9174873.jpg) |
 | 加载图片数组展示引导页 | 加载一个 MP4 视频展示 | 引导结束后进入页面 |
 
 
