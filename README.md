@@ -14,7 +14,7 @@ Use the Swift wrapper guide page feature to support the gallery and video playba
 
 | 1.Photo Gallery | 2.Video Guide | 3.End of Guide |
 | ------------- | ------------- | ------------- |
-| ![](http://og1yl0w9z.bkt.clouddn.com/18-3-19/8674435.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/18-3-19/75290683.jpg) | ![](http://og1yl0w9z.bkt.clouddn.com/18-3-19/67729200.jpg) |
+| ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-22/38048448.jpg) | ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-22/67886214.jpg) | ![](http://ghexoblogimages.oss-cn-beijing.aliyuncs.com/18-11-22/9174873.jpg) |
 | Load an image array to show the guide page | Load an MP4 video show | Go to page after booting |
 
 
